@@ -33,6 +33,14 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <form method="post" asp-action="SignOutAsync">
+                                <button type="submit">sign out</button>
+                            </form>
+                        }
+                    </li>
                 </ul>
             </div>
         </div>

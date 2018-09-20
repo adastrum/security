@@ -20,7 +20,11 @@ namespace Web.Mvc
         {
             services
                 .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie();
+                .AddCookie(options =>
+                {
+                    options.AccessDeniedPath = "/home/forbidden";
+                    options.LoginPath = "/home/signin";
+                });
 
             services.AddMvc();
         }

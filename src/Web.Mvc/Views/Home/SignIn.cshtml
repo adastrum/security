@@ -1,0 +1,14 @@
+﻿@model SignInModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<form method="post" asp-action="SignInAsync">
+    <label asp-for="Name">username</label>
+    <input asp-for="Name" />
+    <label asp-for="Password"></label>
+    <input asp-for="Password" type="password" />
+    <button type="submit">sign in</button>
+</form>
